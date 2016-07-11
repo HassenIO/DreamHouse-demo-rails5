@@ -1,0 +1,22 @@
+.row
+  .col-md-12
+    p#notice = notice
+
+    .row
+      .col-md-6
+        h1 = @property.title
+        p
+          strong Description:
+          = @property.description
+        p
+          strong Features:
+          ul
+            - @property.features.split(',').map(&:strip).each do |feature|
+              li = feature
+
+        p
+          = link_to 'Edit', edit_property_path(@property), class: 'btn btn-default'
+          '|
+          = link_to 'Back', properties_path, class: 'btn btn-default'
+
+      .col-md-6
