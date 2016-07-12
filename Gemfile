@@ -18,6 +18,7 @@ gem 'coffee-rails', '~> 4.2' # Use CoffeeScript for .coffee assets and views
 # gem 'therubyracer', platforms: :ruby # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'jquery-rails' # Use jquery as the JavaScript library
 gem 'turbolinks', '~> 5' # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'jquery-turbolinks', '~> 2.1' # jQuery plugin for drop-in fix binded events problem caused by Turbolinks
 gem 'jbuilder', '~> 2.5' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 
 gem 'figaro' # Simple Rails app configuration

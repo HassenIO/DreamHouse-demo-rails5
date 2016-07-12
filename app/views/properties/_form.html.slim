@@ -18,5 +18,19 @@
     = f.label :features
     = f.text_field :features, class: 'form-control'
 
+  .field.form-group
+    = f.label :images
+    = f.text_field :images, class: 'form-control'
+
+  .field.form-group
+    = f.label :price
+    = f.text_field :price, class: 'form-control'
+
+  a href="#" class='filepicker btn btn-danger' Upload images
+  br
+
   .actions
     = f.submit 'Submit this property', class: 'btn btn-success'
+
+javascript:
+  filepicker.setKey("#{ENV['FILEPICKER_API_KEY']}");

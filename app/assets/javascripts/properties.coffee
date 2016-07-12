@@ -1,3 +1,22 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+
+  $('a.filepicker').on 'click', (e) ->
+
+    filepicker.pickMultiple(
+      {
+        mimetype: 'image/*'
+        services: ['COMPUTER', 'FACEBOOK', 'INSTAGRAM', 'DROPBOX', 'GOOGLE_DRIVE', 'PICASA', 'URL', 'WEBCAM']
+        maxFiles: 2
+      }, (Blob) ->
+
+        images = []
+        for _, image of Blob
+          images.push image.url
+
+        $('#property_images').val(images.join(','))
+
+      , (FPError) ->
+        console.log(FPError.toString())
+    )
+
+    e.preventDefault()
