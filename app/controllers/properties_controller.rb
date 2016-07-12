@@ -1,7 +1,8 @@
 class PropertiesController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_property, only: [:show, :edit, :update, :destroy]
+  before_action :get_property, only: [:show, :edit]
+  before_action :get_property_of_user, only: [:update, :destroy]
 
   # GET /properties
   def index
@@ -23,7 +24,7 @@ class PropertiesController < ApplicationController
 
   # POST /properties
   def create
-    @property = Property.new(property_params)
+    @property = current_user.properties.new(property_params)
 
     if @property.save
       redirect_to @property, notice: 'Property was successfully created.'
@@ -49,9 +50,14 @@ class PropertiesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_property
+  # Get a property given its ID
+  def get_property
     @property = Property.find(params[:id])
+  end
+
+  # Get user property given user and property ID for action
+  def get_property_of_user
+    @property = current_user.properties.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
