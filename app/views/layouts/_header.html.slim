@@ -10,11 +10,11 @@ nav.navbar.navbar-default
 
     div class="collapse navbar-collapse" id="bs-dreamhouse-navbar-collapse-1"
       ul class="nav navbar-nav"
-        li class="active"
-          = link_to 'All properties', root_path
+        li class=(activate_nav_tab('properties', 'index'))
+          = link_to 'All properties', properties_path
         - if user_signed_in?
-          li
-            a href="#" My properties
+          li class=(activate_nav_tab('users', 'index'))
+            = link_to 'My properties', user_properties_path
       ul class="nav navbar-nav navbar-right"
         - if user_signed_in?
           li class="dropdown"

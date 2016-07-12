@@ -20,6 +20,7 @@ class PropertiesController < ApplicationController
 
   # GET /properties/1/edit
   def edit
+    redirect_to(user_properties_path, alert: "You are not the owner of this property") if @property.user != current_user
   end
 
   # POST /properties

@@ -22,9 +22,12 @@
             - @property.features.split(',').map(&:strip).each do |feature|
               li = feature
 
-        p
-          = link_to 'Edit', edit_property_path(@property), class: 'btn btn-default'
-          '|
-          = link_to 'Back', properties_path, class: 'btn btn-default'
+        - if @property.user == current_user
+          p
+            = link_to 'Edit', edit_property_path(@property), class: 'btn btn-default'
+            '|
+            = link_to 'Back', :back, class: 'btn btn-default'
+            '|
+            = link_to 'Destroy', @property, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'
 
       .col-md-6

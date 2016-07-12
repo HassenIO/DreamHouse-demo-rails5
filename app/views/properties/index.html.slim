@@ -9,11 +9,13 @@
           tr
             td
               p
-                strong = property.title
+                strong = link_to property.title, property
               p = property.description
-            td = link_to 'Show', property, class: 'btn btn-xs btn-success'
-            td = link_to 'Edit', edit_property_path(property), class: 'btn btn-xs btn-success'
-            td = link_to 'Destroy', property, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-xs btn-danger'
+            td
+              - if property.user == current_user
+                = link_to 'Edit', edit_property_path(property), class: 'btn btn-xs btn-success'
+                | |
+                = link_to 'Destroy', property, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-xs btn-danger'
 
     br
 
