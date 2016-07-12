@@ -9,6 +9,14 @@
           strong Description:
           = @property.description
         p
+          strong Addess:
+          = @property.address
+          br
+          = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@property.latitude}%2C#{@property.longitude}"
+        p
+          strong Price:
+          = @property.price
+        p
           strong Features:
           ul
             - @property.features.split(',').map(&:strip).each do |feature|

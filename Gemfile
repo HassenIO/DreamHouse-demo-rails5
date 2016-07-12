@@ -46,6 +46,8 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 
+gem 'geocoder' # Complete Ruby geocoding solution. http://www.rubygeocoder.com
+
 # gem 'redis', '~> 3.0' # Use Redis adapter to run Action Cable in production
 # gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
 # gem 'capistrano-rails', group: :development # Use Capistrano for deployment
