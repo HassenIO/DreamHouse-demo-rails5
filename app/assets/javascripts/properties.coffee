@@ -6,7 +6,7 @@ $ ->
       {
         mimetype: 'image/*'
         services: ['COMPUTER', 'FACEBOOK', 'INSTAGRAM', 'DROPBOX', 'GOOGLE_DRIVE', 'PICASA', 'URL', 'WEBCAM']
-        maxFiles: 2
+        maxFiles: 10
       }, (Blob) ->
 
         images = []
