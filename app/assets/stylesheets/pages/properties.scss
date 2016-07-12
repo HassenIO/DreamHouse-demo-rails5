@@ -1,0 +1,80 @@
+ul#properties-list {
+  border-top: 1px solid #e0e0e0;
+  margin-bottom: 50px;
+  overflow: hidden;
+
+  li.property {
+    border-bottom: 1px solid #e0e0e0;
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative;
+
+    &:hover { background-color: #FBFBFB }
+
+    a, a:hover {
+      text-decoration: none;
+    }
+
+    .property-price {
+      background: #f5c945;
+      border-radius: 0 5px 5px 0;
+      bottom: 30px;
+      box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+      color: #9d5d11;
+      font-size: 20px;
+      font-weight: 400;
+      left: 0;
+      padding: 10px;
+      position: absolute;
+    }
+
+  }
+
+  ul.property-images {
+    float: left;
+    height: 150px;
+    overflow: hidden;
+    width: 480px;
+
+    li.property-image {
+      float: left;
+      margin-right: 10px;
+      overflow: hidden;
+      width: 230px;
+
+      img {
+        background: #FCFCFC;
+        height: 150px;
+        width: 230px;
+      }
+    }
+  }
+
+  .property-info {
+    margin-left: 480px;
+
+    h4.property-title {
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    p.property-description {
+      font-weight: 300;
+    }
+
+    ul.property-features {
+      font-weight: 300;
+      margin-top: 10px;
+      overflow: hidden;
+
+      li.property-feature {
+        background: #d0e4f7;
+        border-radius: 3px;
+        color: #1d7fe0;
+        float: left;
+        margin: 0 10px 10px 0;
+        padding: 3px 5px;
+      }
+    }
+  }
+}

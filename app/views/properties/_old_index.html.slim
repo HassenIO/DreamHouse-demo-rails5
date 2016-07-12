@@ -1,0 +1,16 @@
+
+    table.table.table-striped
+      tbody
+        - @properties.each do |property|
+          tr
+            td
+              p
+                strong = link_to property.title, property
+              p = property.description
+            td
+              - if property.user == current_user
+                = link_to 'Edit', edit_property_path(property), class: 'btn btn-xs btn-success'
+                | |
+                = link_to 'Destroy', property, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-xs btn-danger'
+
+    br

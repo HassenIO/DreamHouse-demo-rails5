@@ -1,0 +1,48 @@
+$red-backgroud: #E36651;
+$red-background-active: #C95743;
+
+nav.navbar.navbar-default {
+  background: $red-backgroud;
+  border: 0;
+  border-radius: 0;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 15px 0;
+
+  .navbar-brand {
+    font-weight: 400;
+  }
+
+  a, a:hover {
+    background: transparent;
+    color: #fff;
+  }
+
+  li.active {
+    a, a:hover {
+      background-color: $red-background-active;
+      border-radius: 5px;
+      color: #fff;
+    }
+  }
+
+  li.dropdown.open {
+    & > a {
+      background-color: $red-background-active;
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    ul.dropdown-menu {
+      a {
+        color: #333;
+
+        &:hover {
+          background-color: $red-backgroud;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

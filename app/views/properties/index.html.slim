@@ -1,22 +1,21 @@
 .row
   .col-md-12
 
-    h1 Listing properties
+    h1 List Properties
 
-    table.table.table-striped
-      tbody
-        - @properties.each do |property|
-          tr
-            td
-              p
-                strong = link_to property.title, property
-              p = property.description
-            td
-              - if property.user == current_user
-                = link_to 'Edit', edit_property_path(property), class: 'btn btn-xs btn-success'
-                | |
-                = link_to 'Destroy', property, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-xs btn-danger'
-
-    br
+    ul id="properties-list"
+      - @properties.each do |property|
+        li.property
+          = link_to property do
+            div.property-price = "£#{number_with_delimiter property.price}"
+            ul.property-images
+              li.property-image = image_tag(property.images_arr[0] || '')
+              li.property-image = image_tag(property.images_arr[1] || '')
+            div.property-info
+              h4.property-title = property.title
+              p.property-description = property.description
+              ul.property-features
+                - property.features.split(',').each do |feature|
+                  li.property-feature = feature
 
     = link_to 'New Property', new_property_path, class: 'btn btn-primary'

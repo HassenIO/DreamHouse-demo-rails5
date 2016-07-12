@@ -8,4 +8,10 @@ class Property < ApplicationRecord
 
   after_validation :geocode, if: :address_changed?
 
+  # Convert images string to array of images
+  #
+  def images_arr
+    images.split(',')
+  end
+
 end
