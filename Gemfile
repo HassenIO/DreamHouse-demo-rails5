@@ -47,6 +47,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 
 gem 'devise' # Flexible authentication solution for Rails with Warden. http://blog.plataformatec.com.br/tag/devise/
+gem 'omniauth' # A flexible authentication system utilizing Rack middleware https://github.com/intridea/omniauth
+gem 'omniauth-facebook' # Facebook OAuth2 Strategy for OmniAuth http://mkdynamic.github.com/omniauth-facebook
+
 gem 'geocoder' # Complete Ruby geocoding solution. http://www.rubygeocoder.com
 
 # gem 'redis', '~> 3.0' # Use Redis adapter to run Action Cable in production
