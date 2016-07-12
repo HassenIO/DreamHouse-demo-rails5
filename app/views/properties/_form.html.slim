@@ -23,14 +23,12 @@
     = f.text_field :features, class: 'form-control'
 
   .field.form-group
-    = f.label :images
-    = f.text_field :images, class: 'form-control'
-
-  .field.form-group
     = f.label :price
     = f.text_field :price, class: 'form-control'
 
   a href="#" class='filepicker btn btn-danger' Upload images
+  = f.hidden_field :images
+
   br
 
   .actions
