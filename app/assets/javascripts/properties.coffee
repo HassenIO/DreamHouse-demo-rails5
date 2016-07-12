@@ -20,3 +20,9 @@ $ ->
     )
 
     e.preventDefault()
+
+  $('#property-show #property-images').slick({
+    autoplay: true
+    autoplaySpeed: 5000
+    dots: true
+  })

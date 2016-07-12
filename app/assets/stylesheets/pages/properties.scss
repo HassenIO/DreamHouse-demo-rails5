@@ -1,3 +1,20 @@
+@mixin property-features {
+  ul.property-features {
+    font-weight: 300;
+    margin-top: 10px;
+    overflow: hidden;
+
+    li.property-feature {
+      background: #d0e4f7;
+      border-radius: 3px;
+      color: #1d7fe0;
+      float: left;
+      margin: 0 10px 10px 0;
+      padding: 3px 5px;
+    }
+  }
+}
+
 ul#properties-list {
   border-top: 1px solid #e0e0e0;
   margin-bottom: 50px;
@@ -24,7 +41,7 @@ ul#properties-list {
       font-size: 20px;
       font-weight: 400;
       left: 0;
-      padding: 10px;
+      padding: 10px 20px;
       position: absolute;
     }
 
@@ -62,18 +79,60 @@ ul#properties-list {
       font-weight: 300;
     }
 
-    ul.property-features {
-      font-weight: 300;
-      margin-top: 10px;
-      overflow: hidden;
+    @include property-features;
+  }
+}
 
-      li.property-feature {
-        background: #d0e4f7;
-        border-radius: 3px;
-        color: #1d7fe0;
-        float: left;
-        margin: 0 10px 10px 0;
-        padding: 3px 5px;
+#property-show {
+  margin-bottom: 50px;
+
+  #property-header {
+    overflow: hidden;
+
+    .property-actions {
+      float: right;
+      padding-top: 20px;
+
+      a {
+        margin-left: 20px;
+
+        i.fa { margin-right: 10px }
+      }
+    }
+  }
+
+  .property-description {
+    margin-bottom: 20px;
+  }
+
+  @include property-features;
+
+  .property-address {
+    background: #F0F0F0;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  .property-price {
+    color: #15b359;
+    font-size: 25px;
+    margin: 20px 0 50px;
+  }
+
+  #property-images {
+    margin-bottom: 50px;
+
+    button.slick-arrow:before {
+      color: #a0a0a0 !important;
+    }
+
+    .property-image {
+      text-align: center;
+
+      img {
+        height: 280px;
+        width: 100%;
       }
     }
   }

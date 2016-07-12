@@ -1,7 +1,11 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'font-awesome';
 
 @import 'bases/reset';
 @import 'bases/theme';
 @import 'layout/*';
 @import 'pages/*';
+
+@import 'slick';
+@import 'slick-theme';

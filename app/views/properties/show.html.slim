@@ -1,33 +1,35 @@
-.row
+div.row id="property-show"
   .col-md-12
     p#notice = notice
+    #property-header
+      - if @property.user == current_user
+        .property-actions
+          = link_to edit_property_path(@property), class: 'btn btn-default' do
+            = fa_icon :'file-text'
+            | Edit
+          = link_to @property, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger' do
+            = fa_icon :trash
+            | Delete
+
+      h1 = @property.title
+    br
 
     .row
       .col-md-6
-        h1 = @property.title
-        p
-          strong Description:
-          = @property.description
-        p
+        p.property-description = @property.description
+        ul.property-features
+          - @property.features.split(',').map(&:strip).each do |feature|
+            li.property-feature = feature
+        p.property-address
           strong Addess:
-          = @property.address
-          br
-          = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@property.latitude}%2C#{@property.longitude}"
-        p
-          strong Price:
-          = @property.price
-        p
-          strong Features:
-          ul
-            - @property.features.split(',').map(&:strip).each do |feature|
-              li = feature
+          = " #{@property.address}"
 
-        - if @property.user == current_user
-          p
-            = link_to 'Edit', edit_property_path(@property), class: 'btn btn-default'
-            '|
-            = link_to 'Back', :back, class: 'btn btn-default'
-            '|
-            = link_to 'Destroy', @property, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'
+        p.property-price = "£#{number_with_delimiter @property.price}"
 
       .col-md-6
+        - unless @property.images.empty?
+          #property-images
+            - @property.images_arr.each do |image|
+              .property-image = image_tag image
+
+        #property-location-map = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@property.latitude}%2C#{@property.longitude}"
