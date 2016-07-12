@@ -137,3 +137,45 @@ ul#properties-list {
     }
   }
 }
+
+#form-property {
+
+  i.fa { margin-right: 10px }
+
+  .upload-images {
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    margin-top: 20px;
+
+    ul {
+      overflow: hidden;
+      padding: 0 10px;
+
+      li {
+        float: left;
+        margin: 10px 10px 0 0;
+
+        img {
+          height: 80px;
+          width: 120px;
+        }
+      }
+    }
+
+    .upload-image-button {
+      padding: 10px;
+      text-align: center;
+    }
+  }
+
+  .actions {
+    border-top: 1px solid #c0c0c0;
+    margin-top: 20px;
+    padding-top: 40px;
+
+    button {
+      float: right;
+    }
+  }
+
+}

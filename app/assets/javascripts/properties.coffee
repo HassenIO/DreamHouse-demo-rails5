@@ -9,9 +9,13 @@ $ ->
         maxFiles: 10
       }, (Blob) ->
 
+        $imagesList = $('#form-property .upload-images ul')
+        $imagesList.html('')
+
         images = []
         for _, image of Blob
           images.push image.url
+          $imagesList.append("<li class='uploaded-image'><img src='" + image.url + "'/></li>")
 
         $('#property_images').val(images.join(','))
 

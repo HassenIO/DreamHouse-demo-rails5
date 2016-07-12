@@ -1,38 +1,51 @@
-= form_for @property do |f|
-  - if @property.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@property.errors.count, "error")} prohibited this property from being saved:"
+#form-property
+  = form_for @property do |f|
+    - if @property.errors.any?
+      #error_explanation
+        h2 = "#{pluralize(@property.errors.count, "error")} prohibited this property from being saved:"
+        ul
+          - @property.errors.full_messages.each do |message|
+            li = message
+
+    .row
+      .col-md-8
+        .field.form-group
+          = f.label :title
+          = f.text_field :title, class: 'form-control'
+
+      .col-md-4
+        .field.form-group
+          = f.label :price, 'Price (£)'
+          = f.text_field :price, class: 'form-control'
+
+    .field.form-group
+      = f.label :description
+      = f.text_area :description, class: 'form-control'
+
+    .field.form-group
+      = f.label :address, 'Full address'
+      = f.text_field :address, class: 'form-control'
+
+    .field.form-group
+      = f.label :features, 'Features (comma separated)'
+      = f.text_field :features, class: 'form-control'
+
+    .upload-images
       ul
-        - @property.errors.full_messages.each do |message|
-          li = message
+        - @property.images_arr.each do |image|
+          li.uploaded-image = image_tag image
+      .upload-image-button
+        a href="#" class='filepicker btn btn-primary'
+          = fa_icon :'cloud-upload', text: " Upload images"
+      = f.hidden_field :images
 
-  .field.form-group
-    = f.label :title
-    = f.text_field :title, class: 'form-control'
+    br
 
-  .field.form-group
-    = f.label :address
-    = f.text_field :address, class: 'form-control'
+    .actions
+      = link_to 'Cancel', :back, class: 'btn btn-default'
 
-  .field.form-group
-    = f.label :description
-    = f.text_area :description, class: 'form-control'
-
-  .field.form-group
-    = f.label :features
-    = f.text_field :features, class: 'form-control'
-
-  .field.form-group
-    = f.label :price
-    = f.text_field :price, class: 'form-control'
-
-  a href="#" class='filepicker btn btn-danger' Upload images
-  = f.hidden_field :images
-
-  br
-
-  .actions
-    = f.submit 'Submit this property', class: 'btn btn-success'
+      button class='btn btn-success'
+        = fa_icon :check, text: ' Submit this property'
 
 javascript:
   filepicker.setKey("#{ENV['FILEPICKER_API_KEY']}");

@@ -11,7 +11,7 @@ class Property < ApplicationRecord
   # Convert images string to array of images
   #
   def images_arr
-    images.split(',')
+    images.nil? ? [] : images.split(',')
   end
 
 end
