@@ -1,6 +1,7 @@
 div.row id="property-show"
   .col-md-12
-    p#notice = notice
+    - unless notice.blank?
+      p#notice-property = notice
     #property-header
       - if @property.user == current_user
         .property-actions

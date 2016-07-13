@@ -6,7 +6,8 @@ class PropertiesController < ApplicationController
 
   # GET /properties
   def index
-    @properties = Property.all
+    @properties = Property.all.order(id: :desc)
+    @page_title = 'List of Properties'
   end
 
   # GET /properties/1

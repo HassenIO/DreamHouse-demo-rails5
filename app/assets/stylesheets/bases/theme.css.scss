@@ -35,27 +35,28 @@ h1 {
 }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+  background-color: transparent;
+  display: block;
 }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 2px solid #E36651;
+  border-radius: 5px;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: #f8f8f8;
 
   h2 {
     text-align: left;
     font-weight: bold;
-    padding: 5px 5px 5px 15px;
+    padding: 8px 5px 8px 15px;
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0;
-    background-color: #c00;
+    background-color: #E36651;
+    border-radius: 3px 3px 0 0;
     color: #fff;
   }
 
@@ -63,6 +64,8 @@ h1 {
     font-size: 12px;
     list-style: square;
   }
+
+  ul { padding-left: 25px }
 }
 
 label {

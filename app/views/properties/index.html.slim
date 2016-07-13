@@ -1,21 +1,30 @@
 .row
   .col-md-12
 
-    h1 List Properties
+    h1 id="properties-list-title"
+      = link_to 'Add Your Property', new_property_path, class: 'btn btn-success'
+      = @page_title
 
-    ul id="properties-list"
-      - @properties.each do |property|
-        li.property
-          = link_to property do
-            div.property-price = "£#{number_with_delimiter property.price}"
-            ul.property-images
-              li.property-image = image_tag(property.images_arr[0] || '')
-              li.property-image = image_tag(property.images_arr[1] || '')
-            div.property-info
-              h4.property-title = property.title
-              p.property-description = property.description
-              ul.property-features
-                - property.features.split(',').each do |feature|
-                  li.property-feature = feature
+    - if @properties.empty?
 
-    = link_to 'New Property', new_property_path, class: 'btn btn-primary'
+      .no-properties
+        p.title No properties yet!
+        p
+          = link_to 'List your first property in less than 60 seconds...', new_property_path
+
+    - else
+
+      ul id="properties-list"
+        - @properties.each do |property|
+          li.property
+            = link_to property do
+              div.property-price = "£#{number_with_delimiter property.price}"
+              ul.property-images
+                li.property-image = image_tag(property.images_arr[0] || '')
+                li.property-image = image_tag(property.images_arr[1] || '')
+              div.property-info
+                h4.property-title = property.title
+                p.property-description = property.description
+                ul.property-features
+                  - property.features.split(',').each do |feature|
+                    li.property-feature = feature
