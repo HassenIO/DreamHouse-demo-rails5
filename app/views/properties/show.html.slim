@@ -38,4 +38,4 @@ div.row id="property-show"
             - @property.images_arr.each do |image|
               .property-image = image_tag image
 
-        #property-location-map = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@property.latitude}%2C#{@property.longitude}"
+        #property-location-map = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&key=#{ENV['GMAPS_API_KEY']}&markers=#{@property.latitude}%2C#{@property.longitude}"
