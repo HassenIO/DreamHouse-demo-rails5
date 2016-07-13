@@ -1,0 +1,8 @@
+- if notice
+  span.notice = notice
+- elsif alert
+  span.alert = alert
+- elsif !devise_error_messages!.empty?
+  span.alert = devise_error_messages!
+- else
+  = default_message

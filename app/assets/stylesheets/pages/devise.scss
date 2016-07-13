@@ -1,0 +1,54 @@
+.devise-page {
+
+  margin-bottom: 50px;
+
+  h2 {
+    font-size: 25px;
+    margin: 50px 0 30px;
+    text-align: center;
+
+    .notice { color: #288f57 }
+    .alert { color: #c13224 }
+  }
+
+  label { display: inline }
+
+  i.fa { margin-right: 10px }
+
+  .field_with_errors {
+    background-color: transparent;
+    display: block;
+  }
+
+  .remember-me {
+    margin-top: 8px;
+    label { margin-left: 5px }
+  }
+
+  .shared-links {
+    margin-top: 30px;
+
+    a {
+      color: #0090ff;
+      display: block;
+      font-weight: 700;
+      padding: 7px 0;
+      text-align: center;
+    }
+  }
+
+  .oauth-links {
+    a {
+      border-radius: 5px;
+      color: #fff;
+      display: block;
+      font-weight: 400;
+      margin-bottom: 20px;
+      padding: 10px 0;
+      text-align: center;
+
+      &.oauth-facebook { background-color: #3B5998 }
+    }
+  }
+
+}
