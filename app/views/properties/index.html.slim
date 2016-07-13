@@ -24,7 +24,9 @@
                 li.property-image = image_tag(property.images_arr[1] || '')
               div.property-info
                 h4.property-title = property.title
-                p.property-description = property.description
+                p.property-description
+                  = property.description
+                  = image_tag 'gradient-white.png'
                 ul.property-features
                   - property.features.split(',').each do |feature|
                     li.property-feature = feature

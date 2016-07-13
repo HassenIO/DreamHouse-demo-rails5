@@ -93,13 +93,30 @@ ul#properties-list {
     h4.property-title {
       font-weight: 400;
       margin-bottom: 10px;
+      max-height: 20px;
+      overflow: hidden;
     }
 
     p.property-description {
       font-weight: 300;
+      max-height: 80px;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        top: 40px;
+        left: 0;
+        position: absolute;
+        z-index: 9999;
+      }
     }
 
     @include property-features;
+
+    ul.property-features {
+      max-height: 30px;
+      overflow: hidden;
+    }
   }
 }
 
