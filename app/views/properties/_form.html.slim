@@ -35,9 +35,18 @@
         - @property.images_arr.each do |image|
           li.uploaded-image = image_tag image
       .upload-image-button
-        a href="#" class='filepicker btn btn-primary'
-          = fa_icon :'cloud-upload', text: " Upload images"
+        a href="#" class='filepicker btn btn-primary' id="upload-images-button"
+          = fa_icon :'cloud-upload', text: " Upload property images"
       = f.hidden_field :images
+
+    .upload-images
+      ul
+        - unless @property.floorplan.blank?
+          li.uploaded-image = image_tag @property.floorplan
+      .upload-image-button
+        a href="#" class='filepicker btn btn-primary' id="upload-floorplan-button"
+          = fa_icon :'cloud-upload', text: " Upload floorplan"
+      = f.hidden_field :floorplan
 
     br
 

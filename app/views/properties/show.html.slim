@@ -13,6 +13,8 @@ div.row id="property-show"
             | Delete
 
       h1 = @property.title
+
+    hr
     br
 
     .row
@@ -26,6 +28,9 @@ div.row id="property-show"
           = " #{@property.address}"
 
         p.property-price = "£#{number_with_delimiter @property.price}"
+
+        - unless @property.floorplan.blank?
+          p.property-footplan = image_tag @property.floorplan
 
       .col-md-6
         - unless @property.images.empty?
