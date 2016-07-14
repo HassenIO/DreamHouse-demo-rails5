@@ -44,6 +44,19 @@ group :development do
   gem 'rails_best_practices', require: false # A code metric tool for rails projects https://github.com/railsbp/rails_best_practices
 end
 
+group :development, :test do
+  gem 'rspec-rails' # RSpec for Rails-3+ http://relishapp.com/rspec/rspec-rails
+  gem 'capybara' # Acceptance test framework for web applications https://github.com/jnicklas/capybara
+  gem 'poltergeist' # A PhantomJS driver for Capybara https://github.com/teampoltergeist/poltergeist
+  gem 'factory_girl_rails', '~> 4.0' # A library for setting up Ruby objects as test data, adapted for Rails https://github.com/thoughtbot/factory_girl_rails
+  gem 'faker' # A library for generating fake data such as names, addresses, and phone numbers. https://github.com/stympy/faker
+  gem 'database_cleaner' # Strategies for cleaning databases in Ruby. Can be used to ensure a clean state for testing. http://rubygems.org/gems/database_cleaner
+  gem 'launchy' # A helper for launching cross-platform applications in a fire and forget manner https://github.com/copiousfreetime/launchy
+  gem 'guard-rspec' # Automate spec launches
+  gem 'rb-fsevent' # Catch events
+  gem 'terminal-notifier-guard' # Allow OSX to show guard notifications
+end
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 
 gem 'devise' # Flexible authentication solution for Rails with Warden. http://blog.plataformatec.com.br/tag/devise/
